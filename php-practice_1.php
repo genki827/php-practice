@@ -17,20 +17,12 @@ echo "現在時刻は、", date('Y年m月m日 G時i分s秒') ,"です";
 ?>
 // Q4 条件分岐-1 if文
 <?php
-$device = "mac";
-$messaage;
+$device = "windows";
 
-if ($device === "windows") {
-    $messaage = "使用OSは、windowsです。";
+if ($device === "windows" or $device === "mac"){
+   echo "使用OSは、", $device, "です。";
 }else{
-    $messaage = "どちらでもありません";
-}
-
-if ($device === "mac"){
-    $messaage = "使用OSは、macです。";
-    echo $messaage;
-}else{
-    echo $message;
+    echo "どちらでもありません";
 }
 ?>
 // Q5 条件分岐-2 三項演算子
@@ -45,38 +37,61 @@ if($age < 18){
 ?>
 // Q6 配列
 <?php
-$kantou =['茨木県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県'];
+$kantou = ['茨木県',
+'栃木県',
+'群馬県',
+'埼玉県',
+'千葉県',
+'東京都',
+'神奈川県'];
 
 echo $kantou[2], "と" , $kantou[3] , "は関東地方の都道府県です。";
 ?>
 // Q7 連想配列-1
 <?php
-$kantou = ['東京都' => '新宿区','神奈川県' => '横浜市','千葉県' => '千葉市','埼玉県' => 'さいたま市','栃木県' => '宇都宮市','群馬県' => '前橋市','茨木県' => '水戸市'];
+$kantou = ['東京都' => '新宿区',
+'神奈川県' => '横浜市',
+'千葉県' => '千葉市',
+'埼玉県' => 'さいたま市',
+'栃木県' => '宇都宮市',
+'群馬県' => '前橋市',
+'茨木県' => '水戸市'];
 
-foreach ($kantou as $key => $value){
+foreach ($kantou as $value){
     echo $value."\n";
 }
 ?>
 // Q8 連想配列-2
 <?php
-$kantou = ['東京都' => '新宿区','神奈川県' => '横浜市','千葉県' => '千葉市','埼玉県' => 'さいたま市','栃木県' => '宇都宮市','群馬県' => '前橋市','茨木県' => '水戸市'];
+$kantou = ['東京都' => '新宿区',
+'神奈川県' => '横浜市',
+'千葉県' => '千葉市',
+'埼玉県' => 'さいたま市',
+'栃木県' => '宇都宮市',
+'群馬県' => '前橋市',
+'茨木県' => '水戸市'];
 
 foreach ($kantou as $key => $value){
     if($key === "埼玉県"){
         echo $key , "の県庁所在地は" , $value , "です";
+        break;
     }
 }
 ?>
 // Q9 連想配列-3
 <?php
-$ken = ['東京都' => '新宿区','神奈川県' => '横浜市','千葉県' => '千葉市','埼玉県' => 'さいたま市','栃木県' => '宇都宮市','群馬県' => '前橋市','茨木県' => '水戸市','愛知県' => '名古屋市','大阪府' => '大阪市'];
+$ken = ['東京都' => '新宿区',
+'神奈川県' => '横浜市',
+'千葉県' => '千葉市',
+'埼玉県' => 'さいたま市',
+'栃木県' => '宇都宮市',
+'群馬県' => '前橋市',
+'茨木県' => '水戸市',
+'愛知県' => '名古屋市',
+'大阪府' => '大阪市'];
 
 foreach ($ken as $key => $value){
-        if ($key === "愛知県") {
-           echo $key , "は関東地方ではありません","\n";
-           continue;
-        }
-        if ($key === "大阪府") {
+        if ($key === "愛知県" or $key === "大阪府") {
            echo $key , "は関東地方ではありません","\n";
            continue;
         }else{
@@ -110,17 +125,20 @@ echo $price ,"の商品の税込価格は" ,$taxInPrice ,"円です。";
 // Q12 関数とif文
 <?php
 $num = 0;
+$message;
 
 function distinguishNum($num)
 {
    if($num%2 === 0){
-       echo $num ,"は偶数です。";
+       $message = "{$num}は偶数です。";
+       return $message;
    }else{
-       echo $num ,"は奇数です。";
+       $message = "{$num}は奇数です。";
+       return $message;
    }
 }
 
-distinguishNum($num);
+echo distinguishNum($num);
 ?>
 // Q13 関数とswitch文
 <?php

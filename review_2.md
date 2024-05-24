@@ -37,10 +37,10 @@ public function __construct($id, $name)
 -インスタンスした際に渡された引数を代入している。インスタンス化するごとに異なる引数を代入するため。 
 
 ## クラスがなぜ必要なのか説明してください。
-- ある処理で生じた変数を後で別の用途にも使う際に便利であるため。
+- 一度利用したものを再利用が容易になり保守性が向上する。
 
 ## `DateTime::modify`メソッドの返り値を教えてください。
-- 加算あるいは減算した値を指定した形式で返す。
+- DateTime 型を返します。失敗した場合に false を返す。
 
 ## `DateTime::format`メソッドと`DateInterval::format`メソッドの違いを教えてください。
 - `DateTime::format`メソッドは、DateTime表示のフォーマットを指定する。
@@ -53,4 +53,4 @@ $prev = new DateTime('2000-1-1');
 echo $prev->diff($now)->format('%a')
 ```
 
-- 検索欄に'DateTimeInterface format'と調べてパラメータの中のaを参照する。
+- 検索欄に'DateTime::diff'と調べて、下の参考からDateInterval::formatを押下し、パラメータの中のaを参照する。

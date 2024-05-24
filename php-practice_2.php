@@ -37,14 +37,9 @@ $personalInfos = [
 //Q2-1
 echo $personalInfos[1]['name'], "電話番号は" , $personalInfos[1]['tel'] ,"です。";
 
-$i = 0;
-$num = 1;
-
 //Q2-2
-foreach ($personalInfos as $g => $s){
-    echo $num, "の", $personalInfos[$i]['name'], "のメールアドレスは", $personalInfos[$i]['mail'], "電話番号は", $personalInfos[$i]['tel'], "です。"."\n";
-    $num++;
-    $i++;
+foreach ($personalInfos as $tablekey => $info){
+    echo $tablekey+1, "の", $personalInfos[$tablekey]['name'], "のメールアドレスは", $personalInfos[$tablekey]['mail'], "電話番号は", $personalInfos[$tablekey]['tel'], "です。"."\n";
 }
 
 //Q2-3
