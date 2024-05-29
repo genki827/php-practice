@@ -53,4 +53,5 @@ $prev = new DateTime('2000-1-1');
 echo $prev->diff($now)->format('%a')
 ```
 
-- 検索欄に'DateTime::diff'と調べて、下の参考からDateInterval::formatを押下し、パラメータの中のaを参照する。
+-formatはdiffの表示の仕方を指定してる。
+diffは$nowと$prevの差を指定しているのでそこから逆算してDateTimeのdiffを使った場合のformatを調べる。
