@@ -54,4 +54,4 @@ echo $prev->diff($now)->format('%a')
 ```
 
 -formatはdiffの表示の仕方を指定してる。
-diffは$nowと$prevの差を指定しているのでそこから逆算してDateTimeのdiffを使った場合のformatを調べる。
+diffは$nowと$prevの差を指定しているのでそこから逆算してDateTimeのdiffなので日付の差=DateIntervalのformatを調べる。
