@@ -40,7 +40,7 @@ public function __construct($id, $name)
 - 一度利用したものを再利用が容易になり保守性が向上する。
 
 ## `DateTime::modify`メソッドの返り値を教えてください。
-- Date Timeオブジェクト 型を返します。失敗した場合に false を返す。
+- 加算あるいは減算したDate Timeオブジェクト型を返します。失敗した場合に false を返す。
 
 ## `DateTime::format`メソッドと`DateInterval::format`メソッドの違いを教えてください。
 - `DateTime::format`メソッドは、DateTime表示のフォーマットを指定する。
@@ -53,5 +53,5 @@ $prev = new DateTime('2000-1-1');
 echo $prev->diff($now)->format('%a')
 ```
 
--formatはdiffの表示の仕方を指定してる。
-diffは$nowと$prevの差を指定しているのでそこから逆算してDateTimeのdiffなので日付の差=DateIntervalのformatを調べる。
+-formatは→でつなげているため、diffの表示の仕方を指定してる。
+ 同様にdiffは$nowと$prevの差を指定しているのでそこから逆算してDateTimeのdiffなので日付の差=DateIntervalのformatを調べる。
